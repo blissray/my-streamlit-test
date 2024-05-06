@@ -7,4 +7,3 @@ aioice
 aiortc==1.0.0
 twilio
 toml
-opencv-python
