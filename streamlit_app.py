@@ -5,8 +5,8 @@ from twilio.rest import Client
 import toml
 
 # Read Twilio account information from config.toml
-account_sid = st.secrets["twilio"]["account_sid"]
-auth_token = st.secrets["twilio"]["auth_token"]
+account_sid = st.secrets["account_sid"]
+auth_token = st.secrets["auth_token"]
 
 
 # Twilio 클라이언트 초기화
