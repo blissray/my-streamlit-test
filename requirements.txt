@@ -1,0 +1,8 @@
+streamlit
+streamlit-webrtc
+pydub
+opencv-python-headless
+matplotlib
+aioice
+aiortc
+twilio
