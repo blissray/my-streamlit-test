@@ -1,8 +1,7 @@
-import os
 import streamlit as st
 from streamlit_webrtc import webrtc_streamer, WebRtcMode
 from twilio.rest import Client
-import toml
+
 
 # Read Twilio account information from config.toml
 account_sid = st.secrets["account_sid"]
@@ -16,9 +15,6 @@ def get_ice_servers():
     token = client.tokens.create()
     return token.ice_servers
 
-print(get_ice_servers())
-from streamlit_webrtc import webrtc_streamer
-import av
 
 
 def video_frame_callback(frame):
