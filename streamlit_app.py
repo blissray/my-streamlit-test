@@ -6,8 +6,8 @@ import toml
 
 # Read Twilio account information from config.toml
 config = toml.load("config.toml")
-account_sid = config["twilio"]["account_sid"]
-auth_token = config["twilio"]["auth_token"]
+account_sid = st.secrets["twilio"]["account_sid"]
+auth_token = st.secrets["twilio"]["auth_token"]
 
 # Twilio 클라이언트 초기화
 client = Client(account_sid, auth_token)
