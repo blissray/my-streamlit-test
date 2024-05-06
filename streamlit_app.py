@@ -48,7 +48,5 @@ def video_frame_callback(frame):
 
 webrtc_streamer(
     key="example",
-rtc_configuration={  # Add this config
-        "iceServers": get_ice_servers()
-    },
+    rtc_configuration={"iceServers": get_ice_servers()},
     video_frame_callback=video_frame_callback)
