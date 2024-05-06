@@ -28,6 +28,6 @@ def video_frame_callback(frame):
 webrtc_streamer(
     key="example",
 rtc_configuration={  # Add this config
-        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+        "iceServers": get_ice_servers()
     },
     video_frame_callback=video_frame_callback)
