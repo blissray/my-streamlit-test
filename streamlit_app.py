@@ -51,5 +51,5 @@ webrtc_streamer(
     video_html_attrs=VideoHTMLAttributes(
         autoPlay=True, controls=True, style={"width": "100%"}, muted=muted
     ),
-    rtc_configuration=RTC_CONFIGURATION
+    rtc_configuration=get_ice_servers()
 )
