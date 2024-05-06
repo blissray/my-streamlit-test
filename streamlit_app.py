@@ -41,15 +41,15 @@ def get_ice_servers():
 
     return token.ice_servers
 
-def video_frame_callback(frame):
-    img = frame.to_ndarray(format="bgr24")
+muted = st.checkbox("Mute")
 
-    flipped = img[::-1,:,:]
-
-    return av.VideoFrame.from_ndarray(flipped, format="bgr24")
+from streamlit_webrtc import webrtc_streamer, VideoHTMLAttributes
 
 
 webrtc_streamer(
-    key="example",
-    rtc_configuration=RTC_CONFIGURATION,
-    video_frame_callback=video_frame_callback)
+    key="mute_sample",
+    video_html_attrs=VideoHTMLAttributes(
+        autoPlay=True, controls=True, style={"width": "100%"}, muted=muted
+    ),
+    rtc_configuration=RTC_CONFIGURATION
+)

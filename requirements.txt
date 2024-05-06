@@ -4,6 +4,7 @@ pydub
 opencv-python-headless
 matplotlib
 aioice
-aiortc
+aiortc==1.0.0
 twilio
 toml
+opencv-python
