@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_webrtc import webrtc_streamer, WebRtcMode
+from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 from twilio.rest import Client
 import av
 import logging
@@ -8,6 +8,9 @@ logger = logging.getLogger(__name__)
 
 # Read Twilio account information from config.toml
 
+RTC_CONFIGURATION = RTCConfiguration(
+    {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
+)
 
 @st.cache_data
 def get_ice_servers():
@@ -48,5 +51,5 @@ def video_frame_callback(frame):
 
 webrtc_streamer(
     key="example",
-    rtc_configuration={"iceServers": get_ice_servers()},
+    rtc_configuration=RTC_CONFIGURATION,
     video_frame_callback=video_frame_callback)
